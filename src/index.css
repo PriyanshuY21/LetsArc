@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+  .box:hover .box-content {
+    transform: rotateY(180deg);
+  }
+  .box:hover .box-back {
+    transform: rotateY(0deg);
+  }
+}
+@keyframes slide{
+  0%{
+    transform: translateX(0);
+  }
+  100%{
+    transform: translateX(calc(-100% / 5));
+  }
+}
+@keyframes slide-fast {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes slide-slow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes slide-fast1 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes slide-slow1 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-slide-fast {
+  animation: slide-fast 15s linear infinite;
+  display: flex;
+  width: 80%;
+}
+
+.animate-slide-slow {
+  animation: slide-slow 23s linear infinite;
+  display: flex;
+  width: 80%;
+}
+
+.animate-slide-fast1 {
+  animation: slide-fast1 15s linear infinite;
+  display: flex;
+  width: 200%;
+}
+
+.animate-slide-slow1 {
+  animation: slide-slow1 40s linear infinite;
+  display: flex;
+  width: 200%;
+}
+
+.animate-slide-fast1:hover {
+  animation: slide-slow1 40s linear infinite;
+}
+
+.Montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+.Pacifico {
+  font-family: "Pacifico", cursive;
+}
+.Inter {
+  font-family: "Inter Tight", sans-serif;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #000000;
+  width: 120px;
+  height: 120px;
+  animation: spin 1.8s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.watch-now-button {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+}
+
+.image-container:hover .watch-now-button {
+  display: block;
+}
