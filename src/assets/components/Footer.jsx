@@ -14,7 +14,7 @@ const Footer = () => {
               <a href="https://www.facebook.com/letsarcmedia/">
                 <FaFacebook className="text-gray-400 hover:text-white" size={24} />
               </a>
-              <a href="https://linkedin.com">
+              <a href="https://www.linkedin.com/company/letsarc-media/">
                 <FaLinkedin className="text-gray-400 hover:text-white" size={24} />
               </a>
               <a href="https://www.youtube.com/@letsarcmedia4157">
