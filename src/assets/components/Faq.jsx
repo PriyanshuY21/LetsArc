@@ -33,20 +33,20 @@ const Faq = () => {
 
   return (
     <section className="about-us flex flex-col items-center py-10" style={{ paddingTop: '7rem' }}>
-      <h2 className="text-5xl font-bold mb-8 text-accent" style={{ paddingBottom: '7rem' }}>Frequently Asked Questions</h2>
-      <div className="bg-gray-100 p-10 rounded-lg w-full flex flex-col items-center justify-center" style={{ height: '70vh' }}>
+      <h2 className="text-5xl md:text-3xl font-bold mb-8 text-accent" style={{ paddingBottom: '7rem' }}>Frequently Asked Questions</h2>
+      <div className="bg-gray-100 p-6 md:p-10 rounded-lg w-full flex flex-col items-center justify-center" style={{ minHeight: '70vh' }}>
         {faqs.map((faq, index) => (
           <div key={index} className="w-full">
             <div className="flex justify-between items-center w-full p-4 cursor-pointer" onClick={() => toggleAnswer(index)}>
-              <span className="font-medium text-2xl">{faq.question}</span>
+              <span className="font-medium text-2xl md:text-lg">{faq.question}</span>
               {openIndex === index ? <FaChevronUp /> : <FaChevronDown />}
             </div>
             {openIndex === index && (
-              <div className="p-1 text-xl px-4">
+              <div className="p-2 text-xl md:text-base px-4">
                 <p>{faq.answer}</p>
               </div>
             )}
-            <hr className="my-4" />
+            <hr className="my-2 md:my-4" />
           </div>
         ))}
       </div>

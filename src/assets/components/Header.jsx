@@ -50,13 +50,13 @@ const Header = () => {
             <h1 className="Montserrat font-semibold text-5xl pb-1" style={{ color: 'text', paddingTop: '40px' }}>Your Vision, </h1>
             <h1 className="Montserrat font-semibold text-5xl pb-8" style={{ color: 'text' }}>Seamlessly Captured</h1>
             <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSca1d_VziUAaJkVwPme1GjK-yVKLrc14dqsjOec8dl1GIcxWg/viewform"
-            className="bg-accent/90 hover:bg-accent/100 text-white text-xl font-bold py-3 px-6"
-            style={{ position: 'relative', right: '4%', zIndex: '5', borderRadius: '10px' }}
+              href="https://docs.google.com/forms/d/e/1FAIpQLSca1d_VziUAaJkVwPme1GjK-yVKLrc14dqsjOec8dl1GIcxWg/viewform"
+              className="bg-accent/90 hover:bg-accent/100 text-white text-xl font-bold py-3 px-6"
+              style={{ borderRadius: '10px' }}
             >
-        Start Now
-        </a>          
-        </div>
+              Start Now
+            </a>
+          </div>
         </div>
       </header>
       <section ref={aboutRef}>
@@ -73,7 +73,7 @@ const Header = () => {
       </section>
       <Have />
       <section ref={blogRef}>
-      <Blog />
+        <Blog />
       </section>
       <Start />
       <Faq /> 

@@ -121,17 +121,21 @@ const Services = () => {
   };
 
   return (
-    <section className="about-us flex flex-col items-center py-10" style={{ paddingTop: '4rem' }}>
-      <h2 className="Monsterrat text-5xl justify-center font-bold text-accent">We Provide <span className="text-5xl font-light text-accent">videos in following</span></h2>
-      <h2 className="Monsterrat text-5xl justify-center font-light mt-2 mb-12 text-accent" style={{ paddingBottom: '4rem' }}>industries</h2>
-      <div className="flex justify-center mt-4">
+    <section className="about-us flex flex-col items-center py-10 px-4 md:px-10" style={{ paddingTop: '4rem' }}>
+      <h2 className="Monsterrat text-5xl md:text-3xl justify-center font-bold text-accent text-center">
+        We Provide <span className="text-5xl md:text-3xl font-light text-accent">videos in following</span>
+      </h2>
+      <h2 className="Monsterrat text-5xl md:text-3xl justify-center font-light mt-2 mb-12 text-accent text-center" style={{ paddingBottom: '4rem' }}>
+        industries
+      </h2>
+      <div className="flex flex-wrap justify-center mt-4">
         {headings.map((heading, index) => {
           const [firstLine, ...rest] = heading.split(' ');
           const secondLine = rest.join(' ');
           return (
             <div
               key={index}
-              className={`Monsterrat mx-4 cursor-pointer font-semibold text-center ${selectedHeading === heading ? 'text-green-500 border-b-2 border-green-500' : ''}`}
+              className={`Monsterrat mx-2 md:mx-4 cursor-pointer font-semibold text-center ${selectedHeading === heading ? 'text-green-500 border-b-2 border-green-500' : ''}`}
               onClick={() => {
                 setSelectedHeading(heading);
                 setCurrentImageGroup(0);
@@ -144,44 +148,43 @@ const Services = () => {
           );
         })}
       </div>
+      <div className="p-4 md:p-10 rounded-lg -mt-4 w-full flex flex-col items-center justify-center overflow-hidden" style={{ height: '70vh' }}>
+  <div className="grid grid-cols-4 gap-4 px-6 sm:px-12 md:px-24 lg:px-40">
+    {imageMap[selectedHeading].slice(currentImageGroup * imagesPerGroup, (currentImageGroup + 1) * imagesPerGroup).map((image, index) => (
       <div
-        className="p-10 rounded-lg -mt-4 w-full flex flex-col items-center justify-center overflow-hidden"
-        style={{ height: '70vh' }}
+        key={index}
+        className="relative w-full h-48 sm:h-56 md:h-60 lg:h-80 group cursor-pointer"
       >
-        <div className="grid grid-cols-4 gap-4">
-          {imageMap[selectedHeading].slice(currentImageGroup * imagesPerGroup, (currentImageGroup + 1) * imagesPerGroup).map((image, index) => (
-            <div
-              key={index}
-              className="relative w-60 h-80 group cursor-pointer"
-            >
-              <img src={image} alt={`${selectedHeading} ${index + 1}`} className="w-full h-full object-cover rounded-xl" />
-              <div className="Monsterrat absolute top-0 right-0 text-white bg-black px-2 py-1 rounded-xl text-base">{labelMap[selectedHeading][currentImageGroup * imagesPerGroup + index]}</div>
-              <div className="absolute inset-0 justify-center items-center bg-black bg-opacity-20 group-hover:bg-opacity-50 rounded-xl transition-opacity">
-              <button
-                 className="Monsterrat py-2 px-4 bg-black text-white rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"
-                 onClick={() => handleImageClick(videoMap[selectedHeading][currentImageGroup * imagesPerGroup + index])}
-        >
-                Watch Now
-              </button>
-              </div>
-            </div>
-          ))}
+        <img src={image} alt={`${selectedHeading} ${index + 1}`} className="w-full h-full object-cover rounded-xl" />
+        <div className="Montserrat absolute top-0 right-0 text-white bg-black px-2 py-1 rounded-xl text-xs md:text-base">
+          {labelMap[selectedHeading][currentImageGroup * imagesPerGroup + index]}
         </div>
+        <div className="absolute inset-0 flex justify-center items-center bg-black bg-opacity-20 group-hover:bg-opacity-50 rounded-xl transition-opacity">
+          <button
+            className="Montserrat py-1 px-2 md:py-0.5 md:px-1.5 sm:px-1.5 sm:py-0.5 bg-black text-white rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"
+            onClick={() => handleImageClick(videoMap[selectedHeading][currentImageGroup * imagesPerGroup + index])}
+          >
+            Watch Now
+          </button>
+        </div>
+      </div>
+    ))}
+  </div>
         <div className="flex mt-4 pt-8">
           {[...Array(totalGroups)].map((_, index) => (
             <div
               key={index}
-              className={`mx-2 cursor-pointer rounded-full w-4 h-4 ${currentImageGroup === index ? 'bg-green-500' : 'bg-gray-300'}`}
+              className={`mx-1 md:mx-2 cursor-pointer rounded-full w-3 h-3 md:w-4 md:h-4 ${currentImageGroup === index ? 'bg-green-500' : 'bg-gray-300'}`}
               onClick={() => setCurrentImageGroup(index)}
             ></div>
           ))}
         </div>
       </div>
       {selectedVideo && (
-        <div className="mt-1 w-full flex justify-center">
+        <div className="mt-4 w-full flex justify-center">
           <iframe
-            width="800rem"
-            height="450rem"
+            width="50%"
+            height="400"
             src={`https://www.youtube.com/embed/${selectedVideo}`}
             title="YouTube video player"
             frameBorder="0"
