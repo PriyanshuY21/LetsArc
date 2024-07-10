@@ -24,7 +24,7 @@ const Navbar = ({ scrollToHome, scrollToAbout, scrollToPortfolio, scrollToServic
   return (
     <nav className="flex justify-between items-center p-4 bg-text shadow-md" style={{ height: '10vh' }}>
       <div className="flex items-center">
-        <img src={Logo} alt="Logo" className="mr-2 pl-2 sm:pl-9" style={{ height: '60px', width: 'auto' }} />
+        <img src={Logo} alt="Logo" className="mr-2 pl-2 sm:pl-9" style={{ height: '76px', width: 'auto' }} />
         <div className="hidden lg:flex flex-wrap">
           <h3
             className={`Montserrat text-sm font-normal px-2 sm:px-4 ${activeLink === 'home' ? 'text-accent border-b-2 border-accent' : 'text-primary'}`}

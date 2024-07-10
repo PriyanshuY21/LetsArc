@@ -30,7 +30,7 @@ const AboutUs = () => {
 
   return (
     <section className="about-us flex flex-col items-center py-10" style={{ paddingTop: '7rem' }}>
-      <h2 className="text-5xl font-bold mb-8 text-accent" style={{ paddingBottom: '7rem' }}>What We Do</h2>
+      <h2 className="text-5xl md:text-3xl font-bold mb-8 text-accent" style={{ paddingBottom: '7rem' }}>What We Do</h2>
       <div className="bg-gray-100 p-10 rounded-lg w-full flex flex-col items-center justify-center">
         <div className="Monsterrat max-w-3xl text-center mb-12">
           <p className="Monsterrat text-lg md:text-base">
