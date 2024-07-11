@@ -4,9 +4,9 @@ const Start = () => {
   return (
     <section className="about-us flex flex-col items-center py-10" style={{ paddingTop: '7rem' }}>
       <h2 className="text-5xl md:text-3xl font-bold mb-8 text-accent" style={{ paddingBottom: '7rem' }}>Start Now</h2>
-      <div className="bg-gray-100 p-6 md:p-10 rounded-lg w-full flex flex-col items-center justify-center md:h-auto sm:h-auto h-[70vh]">
-        <div className="Monsterrat max-w-2xl text-center mb-8">
-          <p className="Monsterrat text-2xl md:text-lg">
+      <div className="bg-gray-100 p-6 md:p-10 rounded-lg w-full flex flex-col items-center justify-center h-[70vh] md:h-auto sm:h-[40vh]">
+        <div className="Montserrat max-w-2xl text-center mb-8">
+          <p className="Montserrat text-2xl md:text-lg">
             Connect with our experts to make dedicated videos for you and your business so that you can have an edge above others.
           </p>
         </div>
