@@ -148,28 +148,28 @@ const Services = () => {
           );
         })}
       </div>
-      <div className="p-4 md:p-10 rounded-lg -mt-4 w-full flex flex-col items-center justify-center overflow-hidden" style={{ height: '70vh' }}>
-  <div className="grid grid-cols-4 gap-4 px-6 sm:px-12 md:px-24 lg:px-40">
-    {imageMap[selectedHeading].slice(currentImageGroup * imagesPerGroup, (currentImageGroup + 1) * imagesPerGroup).map((image, index) => (
-      <div
-        key={index}
-        className="relative w-full h-48 sm:h-56 md:h-60 lg:h-80 group cursor-pointer"
-      >
-        <img src={image} alt={`${selectedHeading} ${index + 1}`} className="w-full h-full object-cover rounded-xl" />
-        <div className="Montserrat absolute top-0 right-0 text-white bg-black px-2 py-1 rounded-xl text-xs md:text-base">
-          {labelMap[selectedHeading][currentImageGroup * imagesPerGroup + index]}
+      <div className="p-4 md:p-10 rounded-lg w-full flex flex-col items-center justify-center overflow-hidden" style={{ marginTop: '2rem' }}>
+        <div className="grid grid-cols-4 gap-4 px-6 sm:px-12 md:px-24 lg:px-40">
+          {imageMap[selectedHeading].slice(currentImageGroup * imagesPerGroup, (currentImageGroup + 1) * imagesPerGroup).map((image, index) => (
+            <div
+              key={index}
+              className="relative w-full h-48 sm:h-56 md:h-60 lg:h-80 group cursor-pointer"
+            >
+              <img src={image} alt={`${selectedHeading} ${index + 1}`} className="w-full h-full object-cover rounded-xl" />
+              <div className="Montserrat absolute top-0 right-0 text-white bg-black px-2 py-1 rounded-xl text-xs md:text-base">
+                {labelMap[selectedHeading][currentImageGroup * imagesPerGroup + index]}
+              </div>
+              <div className="absolute inset-0 flex justify-center items-center bg-black bg-opacity-20 group-hover:bg-opacity-50 rounded-xl transition-opacity">
+                <button
+                  className="Montserrat py-1 px-2 md:py-0.5 md:px-1.5 sm:px-1.5 sm:py-0.5 bg-black text-white rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"
+                  onClick={() => handleImageClick(videoMap[selectedHeading][currentImageGroup * imagesPerGroup + index])}
+                >
+                  Watch Now
+                </button>
+              </div>
+            </div>
+          ))}
         </div>
-        <div className="absolute inset-0 flex justify-center items-center bg-black bg-opacity-20 group-hover:bg-opacity-50 rounded-xl transition-opacity">
-          <button
-            className="Montserrat py-1 px-2 md:py-0.5 md:px-1.5 sm:px-1.5 sm:py-0.5 bg-black text-white rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"
-            onClick={() => handleImageClick(videoMap[selectedHeading][currentImageGroup * imagesPerGroup + index])}
-          >
-            Watch Now
-          </button>
-        </div>
-      </div>
-    ))}
-  </div>
         <div className="flex mt-4 pt-8">
           {[...Array(totalGroups)].map((_, index) => (
             <div
