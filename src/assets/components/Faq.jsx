@@ -34,7 +34,7 @@ const Faq = () => {
   return (
     <section className="about-us flex flex-col items-center py-10" style={{ paddingTop: '7rem' }}>
       <h2 className="text-5xl md:text-3xl font-bold mb-8 text-accent" style={{ paddingBottom: '7rem' }}>Frequently Asked Questions</h2>
-      <div className="bg-gray-100 p-6 md:p-10 rounded-lg w-full flex flex-col items-center justify-center" style={{ minHeight: '70vh' }}>
+      <div className="bg-gray-100 p-6 md:p-10 rounded-lg w-full flex flex-col items-center justify-center md:h-auto sm:h-auto h-[70vh]">
         {faqs.map((faq, index) => (
           <div key={index} className="w-full">
             <div className="flex justify-between items-center w-full p-4 cursor-pointer" onClick={() => toggleAnswer(index)}>
