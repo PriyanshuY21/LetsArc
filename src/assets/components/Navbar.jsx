@@ -22,7 +22,7 @@ const Navbar = ({ scrollToHome, scrollToAbout, scrollToPortfolio, scrollToServic
   };
 
   return (
-    <nav className="flex justify-between items-center p-4 bg-text shadow-md" style={{ height: '10vh' }}>
+    <nav className="flex justify-between items-center p-4 bg-text shadow-md md:h-auto sm:h-auto h-[10vh]">
       <div className="flex items-center">
         <img src={Logo} alt="Logo" className="mr-2 pl-2 sm:pl-9" style={{ height: '76px', width: 'auto' }} />
         <div className="hidden lg:flex flex-wrap">
@@ -86,7 +86,7 @@ const Navbar = ({ scrollToHome, scrollToAbout, scrollToPortfolio, scrollToServic
         </button>
       </div>
       {isDropdownOpen && (
-        <div className="lg:hidden flex flex-col items-end bg-black text-white w-48 absolute top-full right-0 py-2 shadow-md z-10" style={{ top: 'calc(10vh)' }}>
+        <div className="lg:hidden flex flex-col items-end bg-black text-white w-48 absolute right-0 py-2 shadow-md z-10" style={{ top: 'calc(100% + 1rem)' }}>
           <h3
             className={`Montserrat text-sm font-normal px-4 py-2 w-full ${activeLink === 'home' ? 'text-accent border-b-2 border-accent' : 'text-white'}`}
             onClick={() => handleClick('home')}

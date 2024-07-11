@@ -44,7 +44,7 @@ const Blog = () => {
   return (
     <section className="about-us flex flex-col items-center py-10" style={{ paddingTop: '7rem' }}>
       <h2 className="text-5xl md:text-3xl lg:text-5xl font-bold mb-8 text-accent" style={{ paddingBottom: '4rem' }}>Blog Posts</h2>
-      <div className="bg-black p-4 md:p-6 lg:p-10 rounded-lg w-full flex flex-col items-center justify-center" style={{ minHeight: '85vh' }}>
+      <div className="bg-black p-4 md:p-6 lg:p-10 rounded-lg w-full flex flex-col items-center justify-center md:h-auto sm:h-auto h-[85vh]">
         <div className="grid grid-cols-5 sm:grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
           {groups[currentIndex].map((image, index) => (
             <div key={index} className="relative group w-full h-auto md:w-auto">
