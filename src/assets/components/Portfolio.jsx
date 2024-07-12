@@ -76,18 +76,18 @@ const Portfolio = () => {
         <div className="relative py-10 rounded-lg" style={{ height: '35rem' }}>
           <div className="icon-frame flex justify-around py-5 bg-gray-100 rounded-2xl z-20 shadow-xl mx-auto absolute pt-14 top-0 left-1/2 transform -translate-x-1/2" style={{ width: '50%', zIndex: 20, height: '15rem' }}>
             <div className="icon-item text-center">
-              <img src={Icon1} alt="Icon 1" className="h-16 mb-1 ml-6" />
-              <h3 className="Montserrat font-bold text-2xl text-gray-400" style={{ paddingBottom: '0.5rem' }}>200+ </h3>
+              <img src={Icon1} alt="Icon 1" className="h-16 mb-1 ml-8" />
+              <h3 className="Montserrat font-bold text-2xl text-ds/80" style={{ paddingBottom: '0.5rem' }}>200+ </h3>
               <p className="Montserrat text-sm">Client Videos Made</p>
             </div>
             <div className="icon-item text-center">
-              <img src={Icon2} alt="Icon 2" className="h-16 mb-1 ml-6" />
-              <h3 className="Montserrat font-bold text-2xl text-gray-400" style={{ paddingBottom: '0.5rem' }}>2+</h3>
+              <img src={Icon2} alt="Icon 2" className="h-16 mb-1 ml-9" />
+              <h3 className="Montserrat font-bold text-2xl text-ds/80" style={{ paddingBottom: '0.5rem' }}>2+</h3>
               <p className="Montserrat text-sm">Available Countries</p>
             </div>
             <div className="icon-item text-center">
-              <img src={Icon3} alt="Icon 3" className="h-16 mb-1 ml-9" />
-              <h3 className="Montserrat font-bold text-2xl text-gray-400" style={{ paddingBottom: '0.5rem' }}>5+</h3>
+              <img src={Icon3} alt="Icon 3" className="h-16 mb-1 ml-11" />
+              <h3 className="Montserrat font-bold text-2xl text-ds/80" style={{ paddingBottom: '0.5rem' }}>5+</h3>
               <p className="Montserrat text-sm">Years of Experienced Team</p>
             </div>
           </div>

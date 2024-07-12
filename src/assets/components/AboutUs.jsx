@@ -30,8 +30,8 @@ const AboutUs = () => {
 
   return (
     <section className="about-us flex flex-col items-center py-10" style={{ paddingTop: '7rem' }}>
-      <h2 className="text-5xl md:text-3xl font-bold mb-8 text-accent" style={{ paddingBottom: '7rem' }}>What We Do</h2>
-      <div className="bg-gray-100 p-10 rounded-lg w-full flex flex-col items-center justify-center">
+      <h2 className="text-5xl md:text-3xl font-bold mb-8 text-cl" style={{ paddingBottom: '7rem' }}>What We Do</h2>
+      <div className="bg-gray-50 shadow-lg p-10 rounded-lg w-full flex flex-col items-center justify-center">
         <div className="Monsterrat max-w-3xl text-center mb-12">
           <p className="Monsterrat text-lg md:text-base">
             LetsArc Media offer our video making services which not only put forward your products and offerings to your target audience but it also conveys your thoughts, your philosophy, and your passion to them. Our videos, apart from being eye-catchy, also make an impact which in turn gets your company, product, or services registered in the mind of the audience. Our each video contains these four elements abbreviated as COSE.
@@ -44,7 +44,7 @@ const AboutUs = () => {
                 <img src={card.imgSrc} alt={card.title} className="mb-2" style={{ height: '15vh' }} />
                 <p className="text-ab">{card.title}</p>
               </div>
-              <div className="box-back absolute w-full h-full shadow-xl backface-hidden transform rotate-y-180 transition-transform duration-200 flex flex-col items-center justify-center bg-accent p-4 border border-gray-300 rounded-lg "style={{width:'115%',height:'115%'}}>
+              <div className="box-back absolute w-full h-full shadow-xl backface-hidden transform rotate-y-180 transition-transform duration-200 flex flex-col items-center justify-center bg-cl p-4 border border-gray-300 rounded-lg "style={{width:'115%',height:'115%'}}>
                 <p className="text-white text-base">{card.description}</p>
               </div>
             </div>

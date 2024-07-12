@@ -14,12 +14,15 @@ const { TbH2 } = require('react-icons/tb');
        lg:"1008px",
       },
       colors:{
+        nav:"#1C207A",
+        cl:"#1F91C2",
         primary: "#D9D9D9",
         secondary: "#FFFFFF",
         accent:"#21B986",
         text: "#000000",
         gr:"#D9D9D9",
         g1:"#585454",
+        ds:"#908383",
         ab:"#776D6D",
       },
       container:{

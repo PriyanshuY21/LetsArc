@@ -5,7 +5,7 @@ import Logo from './images/Logo.png';
 const Footer = () => {
   return (
     <section className="about-us flex flex-col items-center pt-28">
-      <div className="bg-black p-10 w-full flex flex-col items-center justify-center text-white">
+      <div className="bg-nav p-10 w-full flex flex-col items-center justify-center text-white">
         <div className="w-full flex flex-col lg:flex-row justify-between items-start mb-10">
           <div className="flex flex-col items-center mb-6 lg:mb-0">
             <img src={Logo} alt="LetsArc Media" className="Monsterrat mr-2 h-24 sm:h-32 lg:h-44" />

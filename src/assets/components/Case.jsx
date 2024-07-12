@@ -54,8 +54,8 @@ const Case = () => {
 
   return (
     <section className="about-us flex flex-col items-center py-10" style={{ paddingTop: '7rem' }}>
-      <h2 className="text-5xl md:text-3xl font-bold mb-8 text-accent text-center" style={{ paddingBottom: '7rem' }}>What Clients Say</h2>
-      <div className="relative bg-gray-100 p-10 md:p-6 rounded-lg w-full flex flex-col items-center justify-center md:h-auto sm:h-auto h-[70vh]">
+      <h2 className="text-5xl md:text-3xl font-bold mb-8 text-cl text-center" style={{ paddingBottom: '7rem' }}>What Clients Say</h2>
+      <div className="relative bg-gray-50 shadow-lg p-10 md:p-6 rounded-lg w-full flex flex-col items-center justify-center md:h-auto sm:h-auto h-[70vh]">
         <div className={`text-center transition-opacity duration-500 ease-in-out ${isAnimating ? 'opacity-0' : 'opacity-100'}`}>
           <p className="Montserrat px-80 md:px-6 text-xl md:text-lg font-medium mb-4">“{reviews[currentReviewIndex].text}”</p>
           <p className="Montserrat text-lg md:text-base font-normal text-ab">{reviews[currentReviewIndex].author}</p>

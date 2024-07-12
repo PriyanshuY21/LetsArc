@@ -122,10 +122,10 @@ const Services = () => {
 
   return (
     <section className="about-us flex flex-col items-center py-10 px-4 md:px-10" style={{ paddingTop: '4rem' }}>
-      <h2 className="Monsterrat text-5xl md:text-3xl justify-center font-bold text-accent text-center">
-        We Provide <span className="text-5xl md:text-3xl font-light text-accent">videos in following</span>
+      <h2 className="Monsterrat text-5xl md:text-3xl justify-center font-bold text-cl text-center">
+        We Provide <span className="text-5xl md:text-3xl font-light text-cl">videos in following</span>
       </h2>
-      <h2 className="Monsterrat text-5xl md:text-3xl justify-center font-light mt-2 mb-12 text-accent text-center" style={{ paddingBottom: '4rem' }}>
+      <h2 className="Monsterrat text-5xl md:text-3xl justify-center font-light mt-2 mb-12 text-cl text-center" style={{ paddingBottom: '4rem' }}>
         industries
       </h2>
       <div className="flex flex-wrap justify-center mt-4">
@@ -135,7 +135,7 @@ const Services = () => {
           return (
             <div
               key={index}
-              className={`Monsterrat mx-2 md:mx-4 cursor-pointer font-semibold text-center ${selectedHeading === heading ? 'text-green-500 border-b-2 border-green-500' : ''}`}
+              className={`Monsterrat mx-2 md:mx-4 cursor-pointer font-semibold text-center ${selectedHeading === heading ? 'text-cl border-b-2 border-cl' : ''}`}
               onClick={() => {
                 setSelectedHeading(heading);
                 setCurrentImageGroup(0);
@@ -174,7 +174,7 @@ const Services = () => {
           {[...Array(totalGroups)].map((_, index) => (
             <div
               key={index}
-              className={`mx-1 md:mx-2 cursor-pointer rounded-full w-3 h-3 md:w-4 md:h-4 ${currentImageGroup === index ? 'bg-green-500' : 'bg-gray-300'}`}
+              className={`mx-1 md:mx-2 cursor-pointer rounded-full w-3 h-3 md:w-4 md:h-4 ${currentImageGroup === index ? 'bg-cl' : 'bg-gray-300'}`}
               onClick={() => setCurrentImageGroup(index)}
             ></div>
           ))}

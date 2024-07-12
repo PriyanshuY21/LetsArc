@@ -51,7 +51,7 @@ const Header = () => {
             <h1 className="Montserrat font-semibold text-5xl pb-8" style={{ color: 'text' }}>Seamlessly Captured</h1>
             <a
               href="https://docs.google.com/forms/d/e/1FAIpQLSca1d_VziUAaJkVwPme1GjK-yVKLrc14dqsjOec8dl1GIcxWg/viewform"
-              className="bg-accent/90 hover:bg-accent/100 text-white text-xl font-bold py-3 px-6"
+              className="bg-cl/90 hover:bg-cl/100 text-white text-xl font-bold py-3 px-6"
               style={{ borderRadius: '10px' }}
             >
               Start Now

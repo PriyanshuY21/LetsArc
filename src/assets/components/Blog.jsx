@@ -43,7 +43,7 @@ const Blog = () => {
 
   return (
     <section className="about-us flex flex-col items-center py-10" style={{ paddingTop: '7rem' }}>
-      <h2 className="text-5xl md:text-3xl lg:text-5xl font-bold mb-8 text-accent" style={{ paddingBottom: '4rem' }}>Blog Posts</h2>
+      <h2 className="text-5xl md:text-3xl lg:text-5xl font-bold mb-8 text-cl" style={{ paddingBottom: '4rem' }}>Blog Posts</h2>
       <div className="bg-black p-4 md:p-6 lg:p-10 rounded-lg w-full flex flex-col items-center justify-center md:h-auto sm:h-auto h-[85vh]">
         <div className="grid grid-cols-5 sm:grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
           {groups[currentIndex].map((image, index) => (
@@ -61,7 +61,7 @@ const Blog = () => {
             <span
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`h-2 w-2 md:h-3 md:w-3 lg:h-4 lg:w-4 mx-1 rounded-full cursor-pointer ${index === currentIndex ? 'bg-accent' : 'bg-gray-500'}`}
+              className={`h-2 w-2 md:h-3 md:w-3 lg:h-4 lg:w-4 mx-1 rounded-full cursor-pointer ${index === currentIndex ? 'bg-cl' : 'bg-gray-500'}`}
             />
           ))}
         </div>
