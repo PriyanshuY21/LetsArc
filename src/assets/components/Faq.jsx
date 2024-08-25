@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { FaChevronDown, FaChevronUp } from 'react-icons/fa'; 
 
 const Faq = () => {
+  // State to track which FAQ is open
   const [openIndex, setOpenIndex] = useState(null);
 
+  // Function to toggle display of answer
   const toggleAnswer = (index) => {
+    // If same FAQ is clicked again, closes it by setting openIndex to null; otherwise, open the clicked FAQ
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  // Array of FAQs with questions and answers
   const faqs = [
     {
       question: "What kind of video and production skills does LetArc Media offer?",
@@ -30,13 +34,17 @@ const Faq = () => {
   return (
     <section className="about-us flex flex-col items-center py-10" style={{ paddingTop: '7rem' }}>
       <h2 className="text-5xl md:text-3xl font-bold mb-8 text-cl" style={{ paddingBottom: '7rem' }}>Frequently Asked Questions</h2>
+      
       <div className="bg-gray-100 p-6 md:p-10 rounded-lg w-full flex flex-col items-center justify-center h-[70vh] md:h-auto sm:h-auto">
         {faqs.map((faq, index) => (
           <div key={index} className="w-full">
+            {/* FAQ question, clickable to toggle answer */}
             <div className="flex justify-between items-center w-full p-4 cursor-pointer" onClick={() => toggleAnswer(index)}>
               <span className="font-medium text-2xl md:text-lg">{faq.question}</span>
+              {/* Chevron icon changes based on whether FAQ is open */}
               {openIndex === index ? <FaChevronUp /> : <FaChevronDown />}
-            </div>
+            </div>      
+            {/* Displays answer if this FAQ is currently open */}
             {openIndex === index && (
               <div className="p-2 text-xl md:text-base px-4">
                 <p>{faq.answer}</p>

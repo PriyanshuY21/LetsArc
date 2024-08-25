@@ -10,6 +10,7 @@ const Start = () => {
             Connect with our experts to make dedicated videos for you and your business so that you can have an edge above others.
           </p>
         </div>
+              {/* Call to action button */}
         <a
           href="https://docs.google.com/forms/d/e/1FAIpQLSca1d_VziUAaJkVwPme1GjK-yVKLrc14dqsjOec8dl1GIcxWg/viewform"
           className="bg-cl/90 hover:bg-cl/100 text-white font-bold py-4 px-12 md:py-2 md:px-8 rounded-xl"

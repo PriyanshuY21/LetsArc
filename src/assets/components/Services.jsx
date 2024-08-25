@@ -81,6 +81,7 @@ const headings = [
   'Educational and Training Videos'
 ];
 
+// Maps each heading to its corresponding images
 const imageMap = {
   'Corporate Videos': [CI1, CI2, CI3, CI4, CI5, CI6, CI7, CI8, CI9, CI10, CI11, CI12],
   'ProSe Videos': [PI1, PI2, PI3, PI4, PI5, PI6, PI7, PI8, PI9, PI10, PI11, PI12],
@@ -90,6 +91,7 @@ const imageMap = {
   'Educational and Training Videos': [ETI1, ETI2, ETI3, ETI4, ETI5, ETI6, ETI7, ETI8, ETI9, ETI10, ETI11, ETI12]
 };
 
+// Maps each heading to its corresponding YouTube video IDs
 const videoMap = {
   'Corporate Videos': ['qWhqX6gaEpc', 'def456', 'ghi789', 'jkl012'],
   'ProSe Videos': ['mno345', 'pqr678', 'stu901', 'vwx234'],
@@ -99,6 +101,7 @@ const videoMap = {
   'Educational and Training Videos': ['ijk123', 'lmn456', 'opq789', 'rst012']
 };
 
+// Maps each heading to its corresponding image labels
 const labelMap = {
   'Corporate Videos': ['CI1', 'CI2', 'CI3', 'CI4', 'CI5', 'CI6', 'CI7', 'CI8', 'CI9', 'CI10', 'CI11', 'CI12'],
   'ProSe Videos': ['PI1', 'PI2', 'PI3', 'PI4', 'PI5', 'PI6', 'PI7', 'PI8', 'PI9', 'PI10', 'PI11', 'PI12'],
@@ -109,15 +112,15 @@ const labelMap = {
 };
 
 const Services = () => {
-  const [selectedHeading, setSelectedHeading] = useState('Corporate Videos');
-  const [currentImageGroup, setCurrentImageGroup] = useState(0);
-  const [selectedVideo, setSelectedVideo] = useState(null);
+  const [selectedHeading, setSelectedHeading] = useState('Corporate Videos'); // State to track currently selected heading
+  const [currentImageGroup, setCurrentImageGroup] = useState(0); // State to track current group of images
+  const [selectedVideo, setSelectedVideo] = useState(null); // State to track currently selected video
 
-  const imagesPerGroup = 4;
-  const totalGroups = Math.ceil(imageMap[selectedHeading].length / imagesPerGroup);
+  const imagesPerGroup = 4; // Number of images to display per group
+  const totalGroups = Math.ceil(imageMap[selectedHeading].length / imagesPerGroup); // Calculate total number of image groups
 
   const handleImageClick = (videoId) => {
-    setSelectedVideo(videoId);
+    setSelectedVideo(videoId); // Sets selected video ID when an image is clicked
   };
 
   return (
@@ -137,9 +140,9 @@ const Services = () => {
               key={index}
               className={`Monsterrat mx-2 md:mx-4 cursor-pointer font-semibold text-center ${selectedHeading === heading ? 'text-cl border-b-2 border-cl' : ''}`}
               onClick={() => {
-                setSelectedHeading(heading);
-                setCurrentImageGroup(0);
-                setSelectedVideo(null); 
+                setSelectedHeading(heading); // Updates selected heading
+                setCurrentImageGroup(0); // Resets image group when heading changes
+                setSelectedVideo(null); // Clears selected video when heading changes
               }}
             >
               <div>{firstLine}</div>
@@ -148,28 +151,33 @@ const Services = () => {
           );
         })}
       </div>
+      
+      {/* Images and pagination */}
       <div className="p-4 md:p-10 rounded-lg w-full flex flex-col items-center justify-center overflow-hidden" style={{ marginTop: '2rem' }}>
         <div className="grid grid-cols-4 gap-4 px-6 sm:px-12 md:px-24 lg:px-40">
-          {imageMap[selectedHeading].slice(currentImageGroup * imagesPerGroup, (currentImageGroup + 1) * imagesPerGroup).map((image, index) => (
-            <div
-              key={index}
-              className="relative w-full h-48 sm:h-56 md:h-60 lg:h-80 group cursor-pointer"
-            >
-              <img src={image} alt={`${selectedHeading} ${index + 1}`} className="w-full h-full object-cover rounded-xl" />
-              <div className="Montserrat absolute top-0 right-0 text-white bg-black px-2 py-1 rounded-xl text-xs md:text-base">
-                {labelMap[selectedHeading][currentImageGroup * imagesPerGroup + index]}
+          {imageMap[selectedHeading]
+            .slice(currentImageGroup * imagesPerGroup, (currentImageGroup + 1) * imagesPerGroup)
+            .map((image, index) => (
+              <div
+                key={index}
+                className="relative w-full h-48 sm:h-56 md:h-60 lg:h-80 group cursor-pointer"
+              >
+                <img src={image} alt={`${selectedHeading} ${index + 1}`} className="w-full h-full object-cover rounded-xl" />
+                <div className="Montserrat absolute top-0 right-0 text-white bg-black px-2 py-1 rounded-xl text-xs md:text-base">
+                  {labelMap[selectedHeading][currentImageGroup * imagesPerGroup + index]}
+                </div>
+                <div className="absolute inset-0 flex justify-center items-center bg-black bg-opacity-20 group-hover:bg-opacity-50 rounded-xl transition-opacity">
+                  <button
+                    className="Montserrat py-1 px-2 md:py-0.5 md:px-1.5 sm:px-1.5 sm:py-0.5 bg-black text-white rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"
+                    onClick={() => handleImageClick(videoMap[selectedHeading][currentImageGroup * imagesPerGroup + index])}
+                  >
+                    Watch Now
+                  </button>
+                </div>
               </div>
-              <div className="absolute inset-0 flex justify-center items-center bg-black bg-opacity-20 group-hover:bg-opacity-50 rounded-xl transition-opacity">
-                <button
-                  className="Montserrat py-1 px-2 md:py-0.5 md:px-1.5 sm:px-1.5 sm:py-0.5 bg-black text-white rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"
-                  onClick={() => handleImageClick(videoMap[selectedHeading][currentImageGroup * imagesPerGroup + index])}
-                >
-                  Watch Now
-                </button>
-              </div>
-            </div>
           ))}
         </div>
+        {/* Pagination indicators */}
         <div className="flex mt-4 pt-8">
           {[...Array(totalGroups)].map((_, index) => (
             <div
@@ -180,6 +188,7 @@ const Services = () => {
           ))}
         </div>
       </div>
+      {/* Video player section */}
       {selectedVideo && (
         <div className="mt-4 w-full flex justify-center">
           <iframe

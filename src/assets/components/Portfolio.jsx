@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Reddy from './images/Reddy.png';
+import Reddy from './images/Reddy.png'; // Importing images for logos and icons of clients we have worked with 
 import Icon1 from './images/Vid.png';
 import Icon2 from './images/Coun.png';
 import Icon3 from './images/Exp.png';
@@ -9,6 +9,7 @@ import Image2 from './images/Bg.png';
 import Image3 from './images/Bg.png';
 import Image4 from './images/Bg.png';
 
+// Array of image objects with source, alternative text, and YouTube link
 const images = [
   { src: Image, alt: 'IMG1',link:'https://youtu.be/Y0Spn1ey3S4' },
   { src: Image1, alt: 'IMG2',link:'https://youtu.be/Y0Spn1ey3S4' },
@@ -33,13 +34,16 @@ const images = [
 ];
 
 const Portfolio = () => {
+  // To create slide effect for images in two rows
   useEffect(() => {
     const interval = setInterval(() => {
       const row1 = document.querySelector('.image-row-1');
       const row2 = document.querySelector('.image-row-2');
+       // Moves first image to end of the row every 3 seconds
       row1.appendChild(row1.firstElementChild);
       row2.appendChild(row2.firstElementChild);
     }, 3000);
+     // Cleans up interval on component unmount
     return () => clearInterval(interval);
   }, []);
 
